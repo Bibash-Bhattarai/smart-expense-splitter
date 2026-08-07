@@ -1,0 +1,33 @@
+### Maven ###
+target/
+
+### IntelliJ ###
+.idea/
+*.iml
+
+### Eclipse / STS ###
+.project
+.classpath
+.settings/
+
+### VS Code ###
+.vscode/
+
+### macOS ###
+.DS_Store
+
+### Logs ###
+*.log
+
+### Environment ###
+.env
+
+### Temporary ###
+*.tmp
+
+### Build ###
+bin/
+out/
+
+### Spring Boot ###
+spring.log
