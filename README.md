@@ -8,6 +8,7 @@ A Splitwise-style backend application for tracking and splitting group expenses,
 ## Documentation
 - [Requirements](docs/01-requirements.md)
 - [User Stories](docs/02-user-stories.md)
+- [ER Diagram](docs/03-er-diagram.png)
 
 ## Tech Stack
 - Java, Spring Boot, Spring Security, Spring Data JPA
