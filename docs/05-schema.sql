@@ -5,7 +5,7 @@ CREATE TABLE users(
   password VARCHAR(255)
 );
 
-CREATE TABLE groups(
+CREATE TABLE appGroup(
   groupId INT PRIMARY KEY AUTO_INCREMENT,
   groupName VARCHAR(30),
   createdBy INT,
@@ -17,7 +17,7 @@ CREATE TABLE groupMember(
   userId INT,
   groupId INT,
   role VARCHAR(20),
-  FOREIGN KEY(groupId) REFERENCES groups(groupId) ON DELETE RESTRICT,
+  FOREIGN KEY(groupId) REFERENCES appGroup(groupId) ON DELETE RESTRICT,
   FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE RESTRICT,
   UNIQUE (userId, groupId)
 );
@@ -30,7 +30,7 @@ CREATE TABLE expense(
   description VARCHAR(255),
   transactionDate DATE,
   splitType VARCHAR(20),
-  FOREIGN KEY(groupId) REFERENCES groups(groupId) ON DELETE RESTRICT,
+  FOREIGN KEY(groupId) REFERENCES appGroup(groupId) ON DELETE RESTRICT,
   FOREIGN KEY(paidBy) REFERENCES users(userId) ON DELETE RESTRICT,
   INDEX(groupId)
 );
@@ -53,7 +53,7 @@ CREATE TABLE settlement(
   receiverId INT,
   amount DECIMAL(10,2),
   transactionDate DATE,
-  FOREIGN KEY(groupId) REFERENCES groups(groupId) ON DELETE RESTRICT,
+  FOREIGN KEY(groupId) REFERENCES appGroup(groupId) ON DELETE RESTRICT,
   FOREIGN KEY(payerId) REFERENCES users(userId) ON DELETE RESTRICT,
   FOREIGN KEY(receiverId) REFERENCES users(userId) ON DELETE RESTRICT
 );
